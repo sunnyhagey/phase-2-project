@@ -1,0 +1,46 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "name": "Egg",
+        "category": "Food",
+        "level": "Low",
+        "price": 2
+      },
+      {
+        "id": 2,
+        "name": "Cheese",
+        "category": "Food",
+        "level": "Low",
+        "price": 2
+      },
+      {
+        "id": 3,
+        "name": "Taco",
+        "category": "Food",
+        "level": "Medium",
+        "price": 4
+      },
+      {
+        "id": 4,
+        "name": "Burger",
+        "category": "Food",
+        "level": "Medium",
+        "price": 4
+      },
+      {
+        "id": 5,
+        "name": "Pizza",
+        "category": "Food",
+        "level": "High",
+        "price": 6
+      },
+      {
+        "id": 7,
+        "name": "Tyrannosaurus rex",
+        "category": "Food",
+        "level": "Ultra",
+        "price": 10
+      }
+    ]
+  }
