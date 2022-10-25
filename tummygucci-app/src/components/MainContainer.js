@@ -4,23 +4,22 @@ import GucciPage from "./GucciPage";
 
 function MainContainer( props ) {
 
+    const {showShop} = props
+
     const mapItems = props.itemsState.map(item =>
         <ShopContainer
         item = {item}
         key = {item.id}/>)
-
-        function displayShop() {
-            return(
-                mapItems
-            )
-        }
 
     return(
         <div>
             <button>Feed</button>
             <button>Pet</button>
             <button>Work</button>
-            {mapItems}
+            <button onClick={props.handleShop}>Shop</button>
+            {showShop ? mapItems : null}
+            <br/>
+            <p>Inventory:</p>
         </div>
     )
 }

@@ -6,6 +6,14 @@ const itemsUrl = baseUrl + "items/"
 
 function GucciPage() {
 
+    //set state for shop
+    const [showShop, setShowShop] = useState(false)
+
+    //toggle true and false on click
+    const handleShop = (e) => {
+        setShowShop((showShop) => (!showShop))
+    }
+
     const [itemsState, setItemsState] = useState([])
     useEffect(() => fetchItems(), [])
 
@@ -19,7 +27,9 @@ function GucciPage() {
     return(
         <div>
             <MainContainer
-            itemsState = {itemsState}/>
+            itemsState = {itemsState}
+            handleShop = {handleShop}
+            showShop = {showShop}/>
         </div>
     )
 }

@@ -1,6 +1,13 @@
+h1 {
+  text-decoration: green wavy underline;
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +17,65 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.button {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 3em;
+  color:#000;
+  border-radius: 10px;
+  margin: 10px 50px;
+  padding: 20px;
+  background-color: #73bae8
+}
+
+.inventory {
+  background-color: #73bae8;
+  margin: 10px 50px;
+  padding: 20px;
+}
+
+.bg-main {
+  width: 100%;
+  background-color: #dc8ecc;
+}
+
+.thoughtBubble {
+  width: 215px;
+  margin: 0 auto;
+  float: left;
+}
+
+.tommy { 
+  width: 425px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  float: left; 
+}
+
+.bar {
+  border: 1px black;
+  border-radius: 5px;
+  background-color: #6e6e6e;
+  padding: 10px 0;  
+}
+
+.barFilled {
+  border: 1px black;
+  border-radius: 5px;
+  padding: 10px 0;  
+  background-color:#ac3232;
+}
+
+.status-icon {
+  width: 50px;
+  padding: 10px;
+}
+
+.main-content {
+  max-width: 1200px ;
+  margin: 0 auto;
+  float: left;
 }
