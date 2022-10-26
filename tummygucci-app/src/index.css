@@ -48,7 +48,7 @@ code {
   float: left;
 }
 
-.tommy { 
+.creature { 
   width: 425px;
   padding-bottom: 100px;
   margin: 0 auto;
@@ -78,4 +78,6 @@ code {
   max-width: 1200px ;
   margin: 0 auto;
   float: left;
+  border: 2px black;
+  border-radius: 10px;
 }

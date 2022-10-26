@@ -42,5 +42,110 @@
         "level": "Ultra",
         "price": 10
       }
+    ],
+    "mood":[
+      {
+        "value": 0,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 1,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 2,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 3,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 4,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 5,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 6,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 7,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 8,
+        "image": "./images/Happy.gif"
+      },
+      {
+        "value": 9,
+        "image": "./images/Happy.gif"
+      }
+    ],
+    "hunger": [
+    
+      {
+        "value": 0,
+        "image": "./images/RIP.gif"
+      },
+      {
+        "value": 1,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 2,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 3,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 4,
+        "image": "./images/Angry.gif"
+      },
+      {
+        "value": 5,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 6,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 7,
+        "image": "./images/neutral.gif"
+      },
+      {
+        "value": 8,
+        "image": "./images/Happy.gif"
+      },
+      {
+        "value": 9,
+        "image": "./images/Happy.gif"
+      }
+  
+    ],
+    
+    "thoughtBubbles":[
+      {
+        "id": 1,
+        "image": "./images/TB_Heart.gif"
+      },
+      {
+        "id": 2,
+        "image": "./images/TB_Hungry.gif"
+      },
+      {
+        "id": 3,
+        "image": "./images/TB_Hungry_Unhappy.gif"
+      },
+      {
+        "id": 4,
+        "image":"./images/TB_Unhappy.gif"
+      }
     ]
   }
