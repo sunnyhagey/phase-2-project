@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useTimer } from 'use-timer';
 import MainContainer from './MainContainer';
 import CreatureContainer from './CreatureContainer';
+import Hatch from './Hatch';
 
 const baseUrl = "http://localhost:3000/"
 const itemsUrl = baseUrl + "items/"
@@ -30,8 +31,13 @@ const itemsUrl = baseUrl + "items/"
 
 function GucciPage() {
 
-    const [showStart, setShowStart] = useState
-    
+    //* HATCH START */
+    const [showHatch, setShowHatch] = useState(true)
+    const handleHatch = (e) => {
+        setShowHatch((showHatch) => (!showHatch))
+    }
+    //* HATCH STOP */
+
     //*** SHOP START ***
     //set state for shop
     const [showShop, setShowShop] = useState(false)
@@ -66,6 +72,28 @@ function GucciPage() {
     const { time, start, pause, reset, status } = useTimer();
     //*** TIMER STOP */
 
+    //*** SET NAME START */
+    function addName(event, newName){
+        event.preventDefault()
+
+        let postRequest = {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(newName)
+          }
+       
+          fetch(itemsUrl, postRequest)
+          .then( r => r.json())
+          .then(console.log)
+        //   .then(newNameData => setName([newNameData ]) )
+       
+    }
+      
+    //*** SET NAME STOP */
+
     return(
 <div>
     <div>
@@ -76,8 +104,9 @@ function GucciPage() {
     {status === 'RUNNING' && <p>Running...</p>}
 
     
-    <div className='bg-main'>
+    <div>
         <div>
+
             <MainContainer
             itemsState = {itemsState}
             handleShop = {handleShop}
