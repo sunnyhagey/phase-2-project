@@ -42,6 +42,11 @@ code {
   background-color: #dc8ecc;
 }
 
+.sidebar {
+  background-color: #fff;
+  border-radius: 10px solid black 1px;
+}
+
 .thoughtBubble {
   width: 215px;
   margin: 0 auto;
