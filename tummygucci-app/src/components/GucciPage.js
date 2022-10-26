@@ -8,8 +8,8 @@ const itemsUrl = baseUrl + "items/"
 
 function GucciPage() {
 
+    const [inventory, setInventory] = useState([])
 
-    
     //*** SHOP START ***
     //set state for shop
     const [showShop, setShowShop] = useState(false)
@@ -57,7 +57,8 @@ function GucciPage() {
             <MainContainer
             itemsState = {itemsState}
             handleShop = {handleShop}
-            showShop = {showShop}/>
+            showShop = {showShop}
+            inventory = {inventory}/>
             <CreatureContainer 
             moodState = {moodState}
             />

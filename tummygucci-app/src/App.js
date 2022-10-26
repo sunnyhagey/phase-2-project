@@ -5,7 +5,7 @@ import GucciPage from './components/GucciPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <header>
         <h1>Goncho The Destroyer</h1>
       </header>
