@@ -12,14 +12,14 @@ function MainContainer( props ) {
         key = {item.id}/>)
 
     return(
-        <div>
+        <div className="sidebar">
             <button>Feed</button>
             <button>Pet</button>
             <button>Work</button>
             <button onClick={props.handleShop}>Shop</button>
             {showShop ? mapItems : null}
             <br/>
-            <p>Inventory:</p>
+            <p className="inventory">Inventory:</p>
         </div>
     )
 }
