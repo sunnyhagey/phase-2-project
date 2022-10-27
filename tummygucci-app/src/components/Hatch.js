@@ -2,11 +2,6 @@ import React, {useState} from "react";
 
 export default function Hatch(props){
     const [name, setName] = useState("")
-
-    const newName = {
-        name:name
-    }
-    // console.log(newName, "newName here")
     
     return(
     <div className="main-content">
