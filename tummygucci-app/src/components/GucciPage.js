@@ -59,6 +59,12 @@ function GucciPage() {
     const [moodState, setMoodState] = useState(9)
     //***MOOD STATE STOP ***/
 
+    //*** HUNGER STATE START ***/
+    const [hungerState, setHungerState] = useState(9)
+    //***HUNGER STATE STOP ***/
+    
+        
+
     //*** TIMER START ***/
     const { time, start, pause, reset, status } = useTimer();
  
@@ -67,21 +73,20 @@ function GucciPage() {
         if(moodState > 0 ) {
             setMoodState(moodState - 1)
         } 
-    }, [time]
+        if(hungerState > 0 ) {
+            setHungerState(hungerState - 1)
+        }
+    }, [time, console.log('hunger level = ', hungerState)]
     )
        //*** TIMER STOP */
 
 
     return(
 <div>
-    <div>
+<div>
         <button onClick={start}>Start</button>
-        <button onClick={reset}>Reset</button>
     </div>
     <p>Elapsed time: {time}</p>
-    {status === 'RUNNING' && <p>Running...</p>}
-
-    
     <div>
         <div>
 
@@ -91,6 +96,7 @@ function GucciPage() {
             showShop = {showShop}/>
             <CreatureContainer 
             moodState = {moodState}
+            hungerState = {hungerState}
             />
         </div>
     </div>

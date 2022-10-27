@@ -66,6 +66,8 @@ button:hover {
   background-color: #73bae8;
   margin: 10px 50px;
   padding: 20px;
+  border-radius: 10px;
+  border: 4px solid black;
 }
 
 .bg-main {
@@ -75,13 +77,19 @@ button:hover {
 
 .sidebar {
   background-color: #fff;
-  border-radius: 10px solid black 1px;
+  border-radius: 10px;
+  border: solid black 4px;
+  float: left;
+  width: 20%;
 }
 
 .thoughtBubble {
-  width: 215px;
   margin: 0 auto;
-  
+}
+
+.thoughtBubble img {
+  margin: 0 25% 0 0;
+  width: 200px;
 }
 
 .creature { 
@@ -89,6 +97,16 @@ button:hover {
   padding-bottom: 100px;
   margin: 0 auto;
  
+}
+
+.statusBar {
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px 0;
+  float: right;
+  max-width: 60px;
+  margin-top: -150px;
 }
 
 .bar {
@@ -99,15 +117,17 @@ button:hover {
 }
 
 .barFilled {
-  border: 1px black;
-  border-radius: 5px;
-  padding: 10px 0;  
+  border: 3px solid black;
+  padding: 5px;
+  margin: 0 -6;
+  margin-right: -10px;
   background-color:#ac3232;
 }
 
 .status-icon {
   width: 50px;
-  padding: 10px;
+  margin: 10px 10px 0 0;
+  align-content: center;
 }
 
 .main-content {
@@ -117,6 +137,11 @@ button:hover {
   border: 4px solid black;
   border-radius: 10px;
   background-color: #e7f4fa;
+  margin-bottom: 50px !important;
+}
+
+.center {
+  align-content: center;
 }
 
 #hatchBtn {

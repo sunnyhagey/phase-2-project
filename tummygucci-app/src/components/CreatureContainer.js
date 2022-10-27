@@ -29,6 +29,7 @@ export default function CreatureContainer(props){
         
     }, [props.moodState])
 
+    
 
     //Bubble should be hidden on hunger/mood 5+
     //SHOW BUBBLE FUNCTION START***//
@@ -68,12 +69,68 @@ export default function CreatureContainer(props){
 
 
     return (
-    <div>
-        <div className="thoughtBubble">
-        {bubbleStatus()}
+    <div className="main-content"> 
+        <div className="sidebar">
+            <button>Feed</button>
+            <button>Pet</button>
+            <div className="inventory">
+                <strong>INVENTORY:</strong><br/>
+                <p>(coming soon)</p>
+            </div>
         </div>
-        <div className="creature">
-        {character(props.moodState)}
+        <div>
+            <div className="thoughtBubble">
+            {bubbleStatus()}
+            </div>
+            <div className="statusBar">
+                <div className="status-icon">
+                    <img src="images\Happyness.png"/>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <img src="images\Burger.png"/>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                </div>
+            </div>
+            <div className="creature">
+            {character(props.moodState)}
+            </div>
         </div>
     </div>
     )
