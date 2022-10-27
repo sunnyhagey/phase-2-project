@@ -4,7 +4,7 @@ import MainContainer from './MainContainer';
 import CreatureContainer from './CreatureContainer';
 import Hatch from './Hatch';
 
-const baseUrl = "http://localhost:3000/"
+const baseUrl = "http://localhost:3001/"
 const itemsUrl = baseUrl + "items/"
 
 // set all pet's variables in state (happiness, money, hunger, inventory). Stats will be updated through PATCH requests
@@ -31,13 +31,11 @@ const itemsUrl = baseUrl + "items/"
 
 function GucciPage() {
 
-    //* HATCH START */
-    const [showHatch, setShowHatch] = useState(true)
-    const handleHatch = (e) => {
-        setShowHatch((showHatch) => (!showHatch))
-    }
-    //* HATCH STOP */
+    function initialize() {
+        //set happiness and hunger to 10
+        // show the creature
 
+    }
     //*** SHOP START ***
     //set state for shop
     const [showShop, setShowShop] = useState(false)
@@ -59,40 +57,21 @@ function GucciPage() {
     
 
     //*** MOOD STATE START ***/
-    const [moodState, setmoodState] = useState([])
-    
-    function fetchItems() {
-        fetch(itemsUrl)
-        .then(resp => resp.json())
-        .then(moods => setmoodState(moods))
-    }
+    const [moodState, setMoodState] = useState(9)
     //***MOOD STATE STOP ***/
 
     //*** TIMER START ***/
     const { time, start, pause, reset, status } = useTimer();
-    //*** TIMER STOP */
+ 
+    //this function gets called every second
+    useEffect(() => {
+        if(moodState > 0 ) {
+            setMoodState(moodState - 1)
+        } 
+    }, [time]
+    )
+       //*** TIMER STOP */
 
-    //*** SET NAME START */
-    function addName(event, newName){
-        event.preventDefault()
-
-        let postRequest = {
-            method: 'POST',
-            headers: {
-              'Content-type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(newName)
-          }
-       
-          fetch(itemsUrl, postRequest)
-          .then( r => r.json())
-          .then(console.log)
-        //   .then(newNameData => setName([newNameData ]) )
-       
-    }
-      
-    //*** SET NAME STOP */
 
     return(
 <div>

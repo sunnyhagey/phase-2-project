@@ -1,17 +1,41 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 export default function CreatureContainer(props){
 
+    const baseUrl = "http://localhost:3001/"
+    const thoughtUrl = baseUrl + "thoughtBubbles/"
+    const moodUrl = baseUrl + "mood/"
+    const hungerUrl = baseUrl + "hunger/"
     //Setter for showing the thought bubble container based on mood/hunger. 
     const [showBubble, setShowBubble] = useState(false)
-
+    const handleShowBubble = event => {
+        //ShowBubble Container on event (<4 Bars)
+        setShowBubble(true)
+    }
     //Setter for showing the creature images based on mood/hunger
-    const [showCreature, setShowCreature] = useState(true)
+    const [creatureImage, setCreatureImage] = useState("./images/Happy.gif")
+
+    //update creature image whenever the mood changes
+    useEffect(() => {
+        console.log("moodState", props.moodState)
+        getMoodImage(props.moodState)
+        .then((image) => {
+            console.log("first then", image)
+            setCreatureImage(image)
+        })
+        .then((image) => {
+            console.log("second then", image)
+        })
+        
+    }, [props.moodState])
+
 
     //Bubble should be hidden on hunger/mood 5+
     //SHOW BUBBLE FUNCTION START***//
-    function bubbleStatus (){
-        
+    function bubbleStatus(){
+        return(
+            <img src="images\TB_Hungry.gif"/>
+        )
     }
     //SHOW BUBBLE FUNCTION STOP***//
 
@@ -19,8 +43,26 @@ export default function CreatureContainer(props){
     //if mood <4 show ./images/Angry.gif
     //if mood 5-7 show ./images/neutral.gif
     //if mood 7+ show ./images/happy.gif
-    function charStatus (){
+    function getMoodImage(moodNumber){
+        // const promise = new Promise((resolve, reject) => {
+            //resolve('Success!');
+         
+        return fetch(moodUrl)
+        .then((response) => response.json())
+        .then((moodData) => {
+            let currentMood = moodData.find( mood => mood.value == moodNumber )
+            console.log("currentMood.image", currentMood.image)
+            return currentMood.image            
+        })
 
+    }
+    function character(mood){
+
+        //get the mood that correlates to the mood variable
+        return(
+            //replace with a GET request that searches the DB for the current mood and returns the correct image
+            <img src={creatureImage}/>
+        )
     }
     //**CHARACTER SWAP FUNCTION STOP**
 
@@ -28,10 +70,10 @@ export default function CreatureContainer(props){
     return (
     <div>
         <div className="thoughtBubble">
-        {showBubble}
+        {bubbleStatus()}
         </div>
         <div className="creature">
-        {showCreature}
+        {character(props.moodState)}
         </div>
     </div>
     )
