@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { useTimer } from 'use-timer';
 import MainContainer from './MainContainer';
 import CreatureContainer from './CreatureContainer';
-import Hatch from './Hatch';
 
 const baseUrl = "http://localhost:3001/"
 const itemsUrl = baseUrl + "items/"
