@@ -72,6 +72,18 @@ function GucciPage() {
     )
        //*** TIMER STOP */
 
+       //***PET AND FEED FUNCTIONALITY */
+
+    function petCreature() {
+        console.log("You've pet me!")
+        setMoodState(moodState + 1)
+    }
+
+    function feedCreature() {
+        console.log("FEED ME BITCH")
+    }
+
+
 
     return(
 <div>
@@ -89,7 +101,9 @@ function GucciPage() {
             <MainContainer
             itemsState = {itemsState}
             handleShop = {handleShop}
-            showShop = {showShop}/>
+            showShop = {showShop}
+            petCreature = {petCreature}
+            feedCreature = {feedCreature}/>
             <CreatureContainer 
             moodState = {moodState}
             />
