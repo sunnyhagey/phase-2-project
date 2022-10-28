@@ -28,6 +28,7 @@ export default function CreatureContainer(props){
         
     }, [props.moodState])
     
+
     //Bubble should be hidden on hunger/mood 5+
     //SHOW BUBBLE FUNCTION START***//
     function bubbleStatus(){

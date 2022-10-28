@@ -4,6 +4,7 @@ import GucciPage from "./GucciPage";
 
 function MainContainer( props ) {
 
+
     // const {showShop} = props
 
     // const mapItems = props.itemsState.map(item =>
@@ -19,6 +20,10 @@ function MainContainer( props ) {
             {showShop ? mapItems : null} */}
             <br/>
         </div>
+=======
+    return(
+        console.log("placeholder")
+
     )
 }
 

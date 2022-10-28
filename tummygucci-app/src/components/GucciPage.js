@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { useTimer } from 'use-timer';
 import MainContainer from './MainContainer';
 import CreatureContainer from './CreatureContainer';
+
+
 const baseUrl = "http://localhost:3001/"
 const itemsUrl = baseUrl + "items/"
 // set all pet's variables in state (happiness, money, hunger, inventory). Stats will be updated through PATCH requests
@@ -43,11 +45,12 @@ function GucciPage() {
     //*** MOOD STATE START ***/
     const [moodState, setMoodState] = useState(9)
     //***MOOD STATE STOP ***/
+
     //*** HUNGER STATE START ***/
     const [hungerState, setHungerState] = useState(9)
     //***HUNGER STATE STOP ***/
     
-        
+
     //*** TIMER START ***/
     const { time, start, pause, reset, status } = useTimer();
  
@@ -92,6 +95,7 @@ function GucciPage() {
             hungerState = {hungerState}
             petCreature = {petCreature}
             feedCreature = {feedCreature}
+
             />
         </div>
     </div>
