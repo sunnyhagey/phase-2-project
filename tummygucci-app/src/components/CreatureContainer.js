@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
-
 export default function CreatureContainer(props){
-
     const baseUrl = "http://localhost:3001/"
     const thoughtUrl = baseUrl + "thoughtBubbles/"
     const moodUrl = baseUrl + "mood/"
@@ -14,7 +12,8 @@ export default function CreatureContainer(props){
     }
     //Setter for showing the creature images based on mood/hunger
     const [creatureImage, setCreatureImage] = useState("./images/Happy.gif")
-
+    //Setter for showing the thought bubble images based on mood/hunger
+    // const [creatureImage, setCreatureImage] = useState("./images/Happy.gif")
     //update creature image whenever the mood changes
     useEffect(() => {
         console.log("moodState", props.moodState)
@@ -28,8 +27,7 @@ export default function CreatureContainer(props){
         })
         
     }, [props.moodState])
-
-
+    
     //Bubble should be hidden on hunger/mood 5+
     //SHOW BUBBLE FUNCTION START***//
     function bubbleStatus(){
@@ -38,7 +36,6 @@ export default function CreatureContainer(props){
         )
     }
     //SHOW BUBBLE FUNCTION STOP***//
-
     //**CHARACTER SWAP FUNCTION START**
     //if mood <4 show ./images/Angry.gif
     //if mood 5-7 show ./images/neutral.gif
@@ -54,10 +51,8 @@ export default function CreatureContainer(props){
             console.log("currentMood.image", currentMood.image)
             return currentMood.image            
         })
-
     }
     function character(mood){
-
         //get the mood that correlates to the mood variable
         return(
             //replace with a GET request that searches the DB for the current mood and returns the correct image
@@ -65,17 +60,70 @@ export default function CreatureContainer(props){
         )
     }
     //**CHARACTER SWAP FUNCTION STOP**
-
-
     return (
-    <div>
-        <div className="thoughtBubble">
-        {bubbleStatus()}
+    <div className="main-content"> 
+        <div className="sidebar">
+            <button onClick={props.feedCreature}>Feed</button>
+            <button onClick={props.petCreature}>Pet</button>
+            <div className="inventory">
+                <strong>INVENTORY:</strong><br/>
+                <p>(coming soon)</p>
+            </div>
         </div>
-        <div className="creature">
-        {character(props.moodState)}
+        <div>
+            <div className="thoughtBubble">
+            {bubbleStatus()}
+            </div>
+            <div className="statusBar">
+                <div className="status-icon">
+                    <img src="images\Happyness.png"/>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <img src="images\Burger.png"/>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                    <div className="barFilled">
+                    </div>
+                </div>
+            </div>
+            <div className="creature">
+            {character(props.moodState)}
+            </div>
         </div>
     </div>
     )
-
 }
