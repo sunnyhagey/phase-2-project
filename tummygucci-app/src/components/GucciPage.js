@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { useTimer } from 'use-timer';
 import MainContainer from './MainContainer';
 import CreatureContainer from './CreatureContainer';
-import Hatch from './Hatch';
 
 const baseUrl = "http://localhost:3001/"
 const itemsUrl = baseUrl + "items/"
@@ -60,6 +59,12 @@ function GucciPage() {
     const [moodState, setMoodState] = useState(9)
     //***MOOD STATE STOP ***/
 
+    //*** HUNGER STATE START ***/
+    const [hungerState, setHungerState] = useState(9)
+    //***HUNGER STATE STOP ***/
+    
+        
+
     //*** TIMER START ***/
     const { time, start, pause, reset, status } = useTimer();
  
@@ -68,7 +73,10 @@ function GucciPage() {
         if(moodState > 0 ) {
             setMoodState(moodState - 1)
         } 
-    }, [time]
+        if(hungerState > 0 ) {
+            setHungerState(hungerState - 1)
+        }
+    }, [time, console.log('hunger level = ', hungerState)]
     )
        //*** TIMER STOP */
 
@@ -87,14 +95,10 @@ function GucciPage() {
 
     return(
 <div>
-    <div>
+<div>
         <button onClick={start}>Start</button>
-        <button onClick={reset}>Reset</button>
     </div>
     <p>Elapsed time: {time}</p>
-    {status === 'RUNNING' && <p>Running...</p>}
-
-    
     <div>
         <div>
 
@@ -106,6 +110,7 @@ function GucciPage() {
             feedCreature = {feedCreature}/>
             <CreatureContainer 
             moodState = {moodState}
+            hungerState = {hungerState}
             />
         </div>
     </div>
