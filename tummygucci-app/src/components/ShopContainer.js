@@ -8,9 +8,13 @@ function ShopContainer( props ) {
 
     return(
         <div>
-            <p>{item.name}</p>
-            <p>{`Level: ${item.level}`}</p>
-            <p>{`Price: ${item.price}`}</p>
+            <ul>
+                <li>
+                    <p>{item.name}</p>
+                    <p>{`Level: ${item.level}`}</p>
+                    <p>{`Price: ${item.price}`}</p>
+                </li>
+            </ul>
         </div>
     )
 }
